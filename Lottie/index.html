@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторні роботи</title>
+    <link rel="stylesheet" href="lottie-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+</head>
+<div id="overlay"></div>
+<body class="light-theme">
+
+    <!-- Верхнє меню -->
+    <header class="topbar">
+        <div id="menu-button" class="menu-btn"></div>
+        <div class="title">Мої лабораторні</div>
+        <div id="theme-toggle" class="theme-btn"></div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+    <div id="sidebar-bg" class="sidebar-bg"></div>
+    <nav class="sidebar-links">
+        <button onclick="loadTask(1)">Лабораторна робота 1</button>
+        <button onclick="loadLab2()">Лабораторна робота 2</button>
+        <button onclick="loadLab3()">Лабораторна робота 3</button>
+        <button onclick="loadTask(4)">Лабораторна робота 4</button>
+    </nav>
+</aside>
+
+
+    <!-- Основний фон (Lottie BG) -->
+    <div id="lottie-day" class="lottie-bg"></div>
+    <div id="lottie-night" class="lottie-bg"></div>
+
+    <!-- Основний контент -->
+    <main class="content" id="task-container">
+    <h1>Моя лабораторна робота</h1>
+    <p>Тут буде виконання завдань...</p>
+</main>
+
+
+    <script src="lottie-theme.js"></script>
+    <script src="tasks.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+/* Базові стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html 
+{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.topbar, .sidebar, .content, .sidebar-links button 
+{
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.topbar 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--topbar-bg);
+    color: var(--text-color);
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.menu-btn, .theme-btn 
+{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.title 
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Sidebar */
+.sidebar 
+{
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    transition: left 0.4s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open 
+{
+    left: 0;
+}
+
+.sidebar-bg 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.sidebar-links 
+{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.sidebar-links button 
+{
+    padding: 12px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar-links button:hover 
+{
+    background: var(--button-hover);
+}
+
+.lottie-bg 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hidden 
+{
+    display: none;
+}
+
+.content 
+{
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.light-theme 
+{
+    --topbar-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --text-color: #000000;
+    --button-bg: #e0e0e0;
+    --button-hover: #d0d0d0;
+    --button-text: #000000;
+}
+
+
+.dark-theme 
+{
+    --topbar-bg: #0a0a23;
+    --sidebar-bg: #0a0a23;
+    --text-color: #ffffff;
+    --button-bg: #1c1c3c;
+    --button-hover: #2a2a5a;
+    --button-text: #ffffff;
+}
+
+.lottie-bg 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+    pointer-events: none; 
+}
+
+#lottie-day 
+{
+    opacity: 1;
+}
+
+#overlay 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 9;
+}
+
+#overlay.active 
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Фон сторінки */
+body.light-theme 
+{
+    background-color: #ffffff; /* світлий фон */
+}
+
+body.dark-theme 
+{
+    background-color: #0b0c2a; /* темно-синій фон */
+}
+
+/* Стилі для завдань */
+.task-card 
+{
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00aaff;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-card:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.task-card h2 
+{
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: #00aaff;
+}
+
+.task-card p 
+{
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.task-card button 
+{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00aaff;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-card button:hover 
+{
+  background-color: #008ecc;
+}
+
+
+/* Стилі для лабораторної роботи 2 */
+
+/* Сітка для ЛР2 */
+.lab2-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Маленькі плитки */
+.task-tile 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 170, 255, 0.2);
+  border: 2px solid #00aaff;
+  border-radius: 20px;
+  color: var(--text-color);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.task-tile:hover 
+{
+  background: rgba(0, 170, 255, 0.35);
+  transform: scale(1.05);
+}
+
+/* Розгорнута плитка */
+.task-tile.expanded 
+{
+  grid-column: 1 / -1;         
+  padding: 40px 60px;          
+  display: block;
+  text-align: left;
+  font-size: 1.15em;
+  overflow-y: auto;
+
+  background: rgba(10, 20, 40, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+
+  min-height: 600px;          
+  max-width: 1200px;          
+  margin: 20px auto;          
+}
+
+
+.task-expanded h2 
+{
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+.task-expanded pre 
+{
+  background: #1c1c3c;
+  color: #00ffcc;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+.task-expanded button 
+{
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: #00aaff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-expanded button:hover 
+{
+  background: #008ecc;
+}
+
+.task-result 
+{
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  min-height: 30px;
+}
+
+.task-tile 
+{
+  position: relative; 
+  z-index: 1;
+}
+
+.task-tile.expanded 
+{
+  position: relative;
+  z-index: 1000; 
+}
+
+/* Код */
+.task-code 
+{
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 16px;             
+  line-height: 1.6;
+  margin-top: 25px;
+  border: 1px solid #333;
+  max-height: 400px;           
+  overflow-y: auto;
+}
+
+.task-code,
+.task-expanded pre 
+{
+  text-align: left !important; 
+  margin: 0 auto; 
+}
+
+
+/* Плавна анімація плиток */
+.task-tile {
+  transition: all 0.5s ease-in-out; 
+}
+
+.task-tile.expanded 
+{
+  transform: scale(1.02); 
+  transition: all 0.5s ease-in-out; 
+}
+
+.task-tile.expanded .task-expanded 
+{
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0; /* початковий стан */
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp 
+{
+  from 
+  {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Сітка для ЛР3 */
+.lab3-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.lab3-grid .task-tile 
+{
+  color: var(--text-color); /* щоб текст був як у ЛР2 */
+}
+.lab3-grid .task-expanded 
+{
+  color: var(--text-color);
+}
+
+/* Фікс: зробити білим опис умов у Lab-3 */
+.lab3-grid .task-expanded p 
+{
+  color: #ffffff !important;
+}
