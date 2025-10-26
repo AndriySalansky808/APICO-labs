@@ -142,3 +142,172 @@ function expandTaskLab3(tile)
     });
 }
 
+
+// Завантаження ЛР4
+function loadLab4() 
+{
+  const container = document.getElementById("task-container");
+  container.innerHTML = `
+    <div class="tasks-grid lab4-grid">
+      <div class="task-tile" data-task="1">Завдання 1</div>
+      <div class="task-tile" data-task="2">Завдання 2</div>
+      <div class="task-tile" data-task="3">Завдання 3</div>
+      <div class="task-tile" data-task="4">Завдання 4</div>
+      <div class="task-tile" data-task="5">Завдання 5</div>
+    </div>
+  `;
+
+  document.querySelectorAll(".task-tile").forEach(tile => 
+  {
+    tile.addEventListener("click", () => expandTaskLab4(tile));
+  });
+}
+
+function expandTaskLab4(tile) 
+{
+  const taskNumber = tile.dataset.task;
+
+  if (tile.classList.contains("expanded")) 
+  {
+    tile.classList.remove("expanded");
+    tile.innerHTML = `Завдання ${taskNumber}`;
+    return;
+  }
+
+  document.querySelectorAll(".task-tile").forEach(t => 
+  {
+    t.classList.remove("expanded");
+    t.innerHTML = `Завдання ${t.dataset.task}`;
+  });
+
+  tile.classList.add("expanded");
+
+  import(`./../Lab-4_APICO/Task${taskNumber}.js`)
+    .then(module => 
+    {
+      tile.innerHTML = module.renderTask();
+      module.initTask();
+
+      // ⛔ Захист від закриття плитки при кліку на кнопку
+      tile.querySelectorAll("button").forEach(btn =>
+        btn.addEventListener("click", e => e.stopPropagation())
+      );
+    })
+    .catch(err => 
+    {
+      tile.innerHTML = `<p>Помилка завантаження завдання ${taskNumber}</p>`;
+      console.error(err);
+    });
+}
+
+
+// Завантаження ЛР5
+function loadLab5() 
+{
+  const container = document.getElementById("task-container");
+  container.innerHTML = `
+    <div class="tasks-grid lab5-grid">
+      <div class="task-tile" data-task="1">Завдання 1</div>
+      <div class="task-tile" data-task="2">Завдання 2</div>
+      <div class="task-tile" data-task="3">Завдання 3</div>
+      <div class="task-tile" data-task="4">Завдання 4</div>
+    </div>
+  `;
+
+  document.querySelectorAll(".task-tile").forEach(tile => 
+  {
+    tile.addEventListener("click", () => expandTaskLab5(tile));
+  });
+}
+
+function expandTaskLab5(tile) 
+{
+  const taskNumber = tile.dataset.task;
+
+  if (tile.classList.contains("expanded")) 
+  {
+    tile.classList.remove("expanded");
+    tile.innerHTML = `Завдання ${taskNumber}`;
+    return;
+  }
+
+  document.querySelectorAll(".task-tile").forEach(t => 
+  {
+    t.classList.remove("expanded");
+    t.innerHTML = `Завдання ${t.dataset.task}`;
+  });
+
+  tile.classList.add("expanded");
+
+  import(`./../Lab-5_APICO/Task${taskNumber}.js`)
+    .then(module => 
+    {
+      tile.innerHTML = module.renderTask();
+      module.initTask();
+
+      // ⛔ Захист від закриття плитки при кліку на кнопку
+      tile.querySelectorAll("button").forEach(btn =>
+        btn.addEventListener("click", e => e.stopPropagation())
+      );
+    })
+    .catch(err => 
+    {
+      tile.innerHTML = `<p>Помилка завантаження завдання ${taskNumber}</p>`;
+      console.error(err);
+    });
+}
+
+
+// Завантаження ЛР6
+function loadLab6() 
+{
+  const container = document.getElementById("task-container");
+  container.innerHTML = `
+    <div class="tasks-grid lab6-grid">
+      <div class="task-tile" data-task="1">Завдання 1</div>
+      <div class="task-tile" data-task="2">Завдання 2</div>
+      <div class="task-tile" data-task="3">Завдання 3</div>
+      <div class="task-tile" data-task="4">Завдання 4</div>
+      <div class="task-tile" data-task="5">Завдання 5</div>
+    </div>
+  `;
+
+  document.querySelectorAll(".task-tile").forEach(tile => {
+    tile.addEventListener("click", () => expandTaskLab6(tile));
+  });
+}
+
+function expandTaskLab6(tile) 
+{
+  const taskNumber = tile.dataset.task;
+
+  if (tile.classList.contains("expanded")) 
+  {
+    tile.classList.remove("expanded");
+    tile.innerHTML = `Завдання ${taskNumber}`;
+    return;
+  }
+
+  document.querySelectorAll(".task-tile").forEach(t => 
+  {
+    t.classList.remove("expanded");
+    t.innerHTML = `Завдання ${t.dataset.task}`;
+  });
+
+  tile.classList.add("expanded");
+
+  import(`./../Lab-6_APICO/Task${taskNumber}.js`)
+    .then(module => 
+    {
+      tile.innerHTML = module.renderTask();
+      module.initTask();
+      tile.querySelectorAll("button").forEach(btn =>
+        btn.addEventListener("click", e => e.stopPropagation())
+      );
+    })
+    .catch(err => 
+    {
+      tile.innerHTML = `<p>Помилка завантаження завдання ${taskNumber}</p>`;
+      console.error(err);
+    });
+}

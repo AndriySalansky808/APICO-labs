@@ -445,3 +445,78 @@ body.dark-theme
 {
   color: #ffffff !important;
 }
+
+
+/* Сітка для ЛР4 */
+.lab4-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.lab4-grid .task-tile 
+{
+  color: var(--text-color);
+}
+
+.lab4-grid .task-expanded 
+{
+  color: var(--text-color);
+}
+
+/* Робимо білим текст умов для ЛР4 */
+.lab4-grid .task-expanded p 
+{
+  color: #ffffff !important;
+}
+
+
+/* Сітка для ЛР5 */
+.lab5-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.lab5-grid .task-tile 
+{
+  color: var(--text-color);
+}
+
+.lab5-grid .task-expanded 
+{
+  color: var(--text-color);
+}
+
+/* Білий текст умов для ЛР5 */
+.lab5-grid .task-expanded p 
+{
+  color: #ffffff !important;
+}
+
+/* Сітка для ЛР6 */
+.lab6-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.lab6-grid .task-expanded p 
+{
+  color: #ffffff !important;
+}
