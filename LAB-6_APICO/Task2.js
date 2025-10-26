@@ -30,7 +30,8 @@ export function initTask()
 export function getCode() 
 {
   return `
-function introduce() {
+function introduce() 
+{
   return \`Мене звати \${this.name}, мені \${this.age} років.\`;
 }
 

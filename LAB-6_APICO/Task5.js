@@ -57,6 +57,6 @@ const fixedInc = inc.bind(counter);
 fixedInc();
 fixedInc();
 
-counter.show(); // Лічильник: 2
+counter.show(); 
   `.trim();
 }

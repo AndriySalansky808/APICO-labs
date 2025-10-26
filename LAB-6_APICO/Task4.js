@@ -39,7 +39,7 @@ function multiply(a, b)
 const double = multiply.bind(null, 2);
 const triple = multiply.bind(null, 3);
 
-double(5); // 10
-triple(5); // 15
+double(5); 
+triple(5); 
   `.trim();
 }
